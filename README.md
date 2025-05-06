@@ -1,1 +1,5 @@
 # YOLOV4-Trenches
+The imagery required for the dataset was acquired through Google Earth. All images were taken at a resolution of 1920x1080 pixel and later resized to 1920x1088. The images were manually labeled using DarkMark. The trainingset contains 175 unique images containing (XXX) trenches and 2100 unique images functioning as negatives. The images containing trenches were augmented in DarkMark by rotating them (XXX and YYY etc) degrees, resulting in a total of 2100 images containing trenches. The Validation set consists of 44 unique images containing trenches (80/20 training/validation split) and another 44 unique negatives. 
+
+# Modified Recall Function
+This research uses a modified version of Darknet. When there are multiple predictions for one object, and those predictions meet the confidence and IoU thresholds, one prediction is counted as a TP, and the others are omitted from the metrics. Any predictions that do not meet these thresholds will be evaluated as usual. This is achieved by modifying the detector.ccp file. The version used for this research is available in this repo.
